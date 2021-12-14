@@ -6,7 +6,7 @@
 //
 //  In order to compile and run these files,
 //  I had to use the following command:
-//  "swiftc -o main main.swift MrCoxallStack.swift; ./main"
+//  swiftc -o main main.swift MrCoxallStack.swift; ./main
 //  This program uses a custom class.
 
 import Foundation
@@ -20,6 +20,7 @@ enum MyError: Error {
 let aStack: MrCoxallStack = MrCoxallStack()
 let addedNewNumber: String = "Added"
 let popNumber: String = "Popped "
+let peekNumber: String = "The top value of the stack is "
 let newStack: String = "\nNew Stack"
 let failedPush: String = "Cannot add to stack, it is not an integer"
 
@@ -74,6 +75,16 @@ do {
     aStack.showStack()
 } catch {
     print(failedPush)
+}
+
+/*
+* Peek
+*/
+print("\n----- Peek -------\n")
+
+let peekedNumber: Int = aStack.peek()
+if peekedNumber != -1 {
+    print(peekNumber, peekedNumber)
 }
 
 /*

@@ -10,6 +10,19 @@
 class MrCoxallStack {
     var stackAsArray: [Int] = []
 
+    // peeks the top value of the stack
+    func peek() -> Int {
+        let returnValue: Int
+        if stackAsArray.count > 0 {
+            let poppedNumber: Int = stackAsArray[0]
+            returnValue = poppedNumber
+        } else {
+            print("Stack is empty, cannot peek")
+            returnValue = -1
+        }
+        return returnValue
+    }
+
     // pushes a new number into the array
     func push(pushNumber: Int) {
         stackAsArray.insert(pushNumber, at: 0)
